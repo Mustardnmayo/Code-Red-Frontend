@@ -7,7 +7,7 @@ import asteroidVertexShader from '../../3D/shaders/asteroid/vertex.glsl'
 import asteroidFragmentShader from '../../3D/shaders/asteroid/fragment.glsl'
 
 import { step, normalWorldGeometry, output, texture, vec3, vec4, normalize, positionWorld, bumpMap, cameraPosition, color, uniform, mix, uv, max } from 'three/tsl';
-import Propegator from './Propegator'
+import Propegator from './propegator'
 
 class Graphics {
 
