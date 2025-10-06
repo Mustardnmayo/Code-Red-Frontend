@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Code Red</title>
+    <link rel="icon" href="/images/logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="./index.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&family=Saira+Stencil+One&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <div class="headerSectionLeft">
+            <a class="text1" href="/" onclick="navigateTo('/about'); return false;">CODE RED</a>
+        </div>
+        <div class="headerSectionRight">
+            <a class="text1 underline" href="/simulation/simple/" onclick="navigateTo('/about'); return false;">Simulation</a>
+        </div>
+    </header>
+
+    <div class="hero">
+        <div class="backdrop" id="backdrop"></div>
+        <div class="heroLeft">
+            <h1 class="heroText noSelect" style="margin-bottom: 0.2em;">CODE RED</h1>
+            <h1 class="text2 noSelect" style="margin-bottom: 1em; max-width: 75%;">Simulate asteroid impacts with scientific accuracy, and try to defend earth from comets. Impacting the future before it impacts us.</h1>
+            <button id="simBtn">Get Started</button>
+        </div>
+        <div class="heroRight">
+
+        </div>
+    </div>
+</body>
+
+<script>
+  document.getElementById('simBtn').addEventListener('click', function (e) {
+    window.location.href = '/simulation/simple/';
+  });
+</script>
+
+</html>

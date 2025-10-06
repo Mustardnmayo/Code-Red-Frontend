@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Code Red</title>
+    <link rel="icon" href="/images/logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="simulation.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&family=Saira+Stencil+One&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <div class="headerSectionLeft">
+            <a class="text1" href="/" onclick="navigateTo('/simulation/simple/'); return false;">CODE RED</a>
+        </div>
+        <div class="headerSectionRight">
+            <a class="text1 underline" href="/simulation/simple/" onclick="navigateTo('/simulation/simple/'); return false;">Simulation</a>
+        </div>
+    </header>
+
+    <div class="main">
+        <canvas class="backdrop" id="backdrop"></canvas>
+    </div>
+
+    <div class="input">
+        <h2 class="text1" style="margin-bottom: 32px;">Asteroid:</h2>
+        <div class="inputRow">
+            <h3 class="text3" style="width: 30%;">Position: </h3>
+            <input type="number" value="0" class="text3" id="positionXForm">
+            <input type="number" value="8000" class="text3" id="positionYForm">
+            <input type="number" value="0" class="text3" id="positionZForm">
+        </div>
+        <div class="inputRow">
+            <h3 class="text3" style="width: 30%;">Velocity: </h3>
+            <input type="number" value="3000" class="text3" id="velocityXForm">
+            <input type="number" value="0" class="text3" id="velocityYForm">
+            <input type="number" value="2000" class="text3" id="velocityZForm">
+        </div>
+        <div class="inputRow">
+            <h3 class="text3" style="width: 30%;">Mass: </h3>
+            <input type="number" value="1200" class="text3" id="asteroidMassForm">
+        </div>
+        <div class="inputRow">
+            <h3 class="text3" style="width: 30%;">Diameter: </h3>
+            <input type="number" value="50" class="text3" id="asteroidDiameterForm">
+        </div>
+
+        <button id="resetButton">Reset and Upload</button>
+    </div>
+
+    <div class="timelineBox">
+        <div class="timeline noSelect">
+            <img class="timelineButton" id="fastBackwardButton" src="../../images/backarrow.png">
+            
+            </img>
+            <img class="timelineButton" id="timelineBackward" src="../../images/backarrow.png">
+                
+            </img>
+            <img class="timelineButton" id="timelinePlayButton" src="../../images/run.png">
+                
+            </img>
+            <img class="timelineButton" id="timelineForward" src="../../images/backarrow.png" style="transform: rotate(180deg);">
+                
+            </img>
+            <img class="timelineButton" id="fastForwardButton" src="../../images/backarrow.png" style="transform: rotate(180deg);">
+                
+            </img>
+        </div>
+    </div>
+
+    <div class="timeBox">
+        <div class="time">
+            <h2 class="text1" id="timer">00:000:00:00:00</h2>
+            <h2 class="text2" id="timerString" style="font-size: 1em;">0 days 00 hours</h2>
+        </div>
+    </div>
+
+    <div class="resultsBox">
+        <div class="results hidden" id="resultsMenu">
+            <h3 class="text3" id="latitudeText" style="margin-bottom: 4px;">Latitude: </h3>
+            <h3 class="text3" id="longitudeText" style="margin-bottom: 24px;">Longitude: </h3>
+            <button id="resultsCloseButton">Close</button>
+        </div>
+    </div> 
+</body>
+
+<script src="index.js" type="module"></script>
+<script src="timeline.js" type="module"></script>
+
+</html>
