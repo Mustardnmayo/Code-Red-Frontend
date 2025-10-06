@@ -1,4 +1,4 @@
-import Propegator from "./propegator";
+import Propegator from "./Propegator.js";
 
 let timer = document.getElementById("timer");
 let timerString = document.getElementById("timerString");
