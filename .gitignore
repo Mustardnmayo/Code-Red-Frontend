@@ -71,3 +71,6 @@ node_modules/
 vanta.globe.min.js
 firebase.json
 package-lock.json
+/dist
+/public/assets
+/public
