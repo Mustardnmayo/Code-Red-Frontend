@@ -206,8 +206,85 @@ class Propegator {
         this.resultsMenu.classList.remove("hidden");
     }
 
+    static gURL = 'https://pnasaspaceapp-production.up.railway.app/';
+
+
+    static async createMeteor(id, x, y, z, vx, vy, vz, weight, long, lat, diameter, name) {
+        const meteor = {
+            x: x,
+            y: y,
+            z: z,
+            vx: vx,
+            vy: vy,
+            vz: vz,
+            weight: weight,
+            long: long,
+            lat: lat,
+            diameterM: diameter,
+            name: name
+        };
+
+        const url = this.gURL + `createMeteor/${id}`;
+        try {
+            const response = await fetch(url, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(meteor)   
+            });
+
+            if (!response.ok) throw new Error(`HTTP error | status: ${response.status}`);
+            const data = await response.json();
+            console.log(data);
+            return data;
+        } catch (err) {
+            console.error(err);
+        }
+    }
+
+    static async getMeteor(id) {
+        try{
+        const response = await fetch(gURL + `getMeteor/${id}`);
+        if (!response.ok) throw new Error(`HTTP error | status: ${response.status}`);
+        const data = await response.json();
+        console.log(data);
+        return data;
+        }
+        catch(err){
+        console.error(err);
+    }
+    }
+
+    static async calculateMeteor(id) {
+        try{
+            const response = await fetch(gURL + `calculate/${id}`);
+            if (!response.ok) throw new Error(`HTTP error | status: ${response.status}`);
+            const data = await response.json();
+            console.log(data);
+            return data;
+            }
+            catch(err){
+            console.error(err);
+        }
+    }
+
 }
 
 Propegator.resultsSetup();
+
+const meteor1 = {
+  x: 200,
+  y: 0,
+  z: 0,
+  vx: 10,
+  vy: 15,
+  vz: 20,
+  weight: 1000,
+  long: 0,
+  lat: 0,
+  diameterM: 5,
+  name: "TestMeteor"
+};
+
+Propegator.createMeteor("meteor123", meteor1);
 
 export default Propegator;
